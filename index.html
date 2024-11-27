@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LC Device UI Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="device-container">
+        <div class="device">
+            <canvas id="uiCanvas" width="320" height="640"></canvas>
+            <button class="button" id="button"></button>
+            <div class="scroll-wheel" id="scrollWheel">
+                <div class="scroll-wheel-inner"></div>
+                <div class="scroll-wheel-indicator" id="scrollWheelIndicator"></div>
+            </div>
+        </div>
+        <div class="duplicate-device">
+            <canvas id="uiCanvasDuplicate" width="32" height="64"></canvas> <!-- New duplicate canvas -->
+        </div>
+
+        <div class="btle-box">
+            <div class="btle-label">BTLE Control</div>
+            <div class="btle-wheel" id="btleWheel">
+                <div class="btle-wheel-indicator" id="btleWheelIndicator"></div>
+            </div>
+            <button id="usbChargeToggle" class="toggle-button">USB Charge: OFF</button>
+            <button id="inMountToggle" class="toggle-button">In Mount: OFF</button>
+            <div class="battery-input">
+                <label for="batteryVoltageInput">Battery Voltage (V):</label>
+                <input type="number" id="batteryVoltageInput" step="0.1" min="0">
+            </div>
+        </div>
+    </div>
+    <div class="status">
+        <p>Mode: <span id="modeDisplay">OFF</span></p>
+        <p>Device Value: <span id="deviceValueDisplay">0</span></p>
+        <p>Display Value: <span id="displayValue">---</span></p>
+    </div>
+    <div class="notes">
+        <p id="notesText">
+            <h2><span style="color: rgb(209, 213, 216);">Usage:</span></h2>
+<ul>
+    <li style="color: rgb(209, 213, 216);">Device only works &apos;in mount&apos;</li>
+    <li style="color: rgb(209, 213, 216);">Battery will be consumed when active and can be charged at any time&nbsp;</li>
+    <li style="color: rgb(209, 213, 216);">Long press to switch on</li>
+    <li style="color: rgb(209, 213, 216);">Scroll wheel with mouse to adjust ND value</li>
+    <li style="color: rgb(209, 213, 216);">Click to toggle ND adjust mode</li>
+    <li style="color: rgb(209, 213, 216);">Long press while on to toggle BLE mode. Input from &apos;remote&apos; accepted only</li>
+    <li style="color: rgb(209, 213, 216);">Double click to toggle interface lock.</li>
+    <li style="color: rgb(209, 213, 216);">Hold button &gt;5s for power down.</li>
+</ul>
+<h2><span style="color: rgb(209, 213, 216);">Notes:&nbsp;</span></h2>
+<p><span style="color: rgb(209, 213, 216);">Interface 95% complete in this version.&nbsp;</span></p>
+<p><span style="color: rgb(209, 213, 216);">To do:&nbsp;</span></p>
+<ul>
+    <li style="color: rgb(209, 213, 216);text-decoration: line-through;">Double click logic fix</li>
+    <li style="color: rgb(209, 213, 216);text-decoration: line-through;">Add shutdown countdown to provide user feedback</li>
+    <li style="color: rgb(209, 213, 216);">Doublecheck for bugs</li>
+</ul>
+
+                  </p>
+    </div>
+
+    <script src="bitmapRenderer.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

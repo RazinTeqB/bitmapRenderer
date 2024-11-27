@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Set background to black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Allow positioning of notes area */
+}
+
+.device-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 1000px;
+    position: relative;
+    margin-right: 20px; /* Ensure spacing between interface and notes area */
+}
+
+.status {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 200px;
+    font-size: 18px;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.status span {
+    display: inline-block;
+    min-width: 60px;
+}
+
+#modeDisplay, #deviceValueDisplay, #displayValue {
+    display: inline-block;
+    min-width: 80px;
+}
+
+.device {
+    width: 400px;
+    height: 800px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+    position: relative;
+}
+
+#uiCanvas {
+    width: 320px;
+    height: 640px;
+    border: 2px solid #444;
+    background-color: #000;
+    image-rendering: pixelated;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.duplicate-device {
+    width: 80px;
+    height: 160px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#uiCanvasDuplicate {
+    width: 32px; /* 1/10th the width of the original canvas */
+    height: 64px; /* 1/10th the height of the original canvas */
+    border: 1px solid #444;
+    background-color: #000;
+    image-rendering: pixelated;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    background-color: #ffa500;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button:active {
+    background-color: #cc8400;
+}
+
+.scroll-wheel {
+    width: 100px;
+    height: 100px;
+    background-color: #666;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-wheel-inner {
+    width: 50px;
+    height: 50px;
+    background-color: #888;
+    border-radius: 50%;
+}
+
+.scroll-wheel-indicator {
+    width: 25px;
+    height: 25px;
+    background-color: #444;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 37.5px;
+    transform-origin: center 50px;
+    transform: rotate(0deg);
+}
+
+.btle-box {
+    width: 200px;
+    height: auto;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.btle-label {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.btle-wheel {
+    width: 100px;
+    height: 100px;
+    background-color: #666;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px auto;
+}
+
+.btle-wheel-indicator {
+    width: 25px;
+    height: 25px;
+    background-color: #444;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 37.5px;
+    transform-origin: center 50px;
+    transform: rotate(0deg);
+}
+
+.toggle-button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.toggle-button:hover {
+    background-color: #888;
+}
+
+.toggle-button:active {
+    background-color: #555;
+}
+
+.battery-input {
+    width: 100%;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.battery-input input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.notes {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 400px;
+    height: 500px;
+    background-color: #444; /* Mid grey background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+}
+
+#notesText {
+    color: #ccc; /* Light grey text */
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
